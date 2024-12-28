@@ -1,12 +1,19 @@
 import { Component } from '@angular/core';
+import { OnInit } from '@angular/core';
+import { initFlowbite } from 'flowbite';
 import { RouterOutlet } from '@angular/router';
+import { NavbarComponent } from "./ui/navbar/navbar.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  imports: [RouterOutlet, NavbarComponent],
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'final';
+export class AppComponent implements OnInit {
+  title = 'ecommerce';
+
+  ngOnInit(): void {
+    initFlowbite();
+  }
 }
